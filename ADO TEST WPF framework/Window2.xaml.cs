@@ -80,7 +80,20 @@ namespace ADO_TEST_WPF_framework
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             productsTableAdapter.Fill(ds.products);
-            dv.RowStateFilter = DataViewRowState.ModifiedOriginal;
+            dv.RowStateFilter = DataViewRowState.CurrentRows;
+
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            productsTableAdapter.Update(ds.products);
+
+            dv.RowStateFilter = DataViewRowState.CurrentRows;
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            dv.RowStateFilter = DataViewRowState.Added;
 
         }
     }
