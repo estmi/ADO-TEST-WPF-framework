@@ -46,5 +46,11 @@ namespace ADO_TEST_WPF_framework
             Window1 wnd = new Window1((classiccarDataSet)FindResource("classiccarDataSet"));
             wnd.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window2 wnd = new Window2((classiccarDataSet)FindResource("classiccarDataSet"));
+            wnd.Show();
+        }
     }
 }
