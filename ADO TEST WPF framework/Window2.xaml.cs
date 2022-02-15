@@ -43,5 +43,45 @@ namespace ADO_TEST_WPF_framework
             
             base.OnActivated(e);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            dv.RowFilter = string.Empty;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            dv.Sort = "quantityInStock DESC";
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            dv.RowFilter = $"productline like '{cmb.Text}'";
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            dv.Sort = string.Empty;
+
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            dv.RowStateFilter = DataViewRowState.ModifiedOriginal;
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            dv.RowStateFilter = DataViewRowState.ModifiedCurrent;
+
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            productsTableAdapter.Fill(ds.products);
+            dv.RowStateFilter = DataViewRowState.ModifiedOriginal;
+
+        }
     }
 }
